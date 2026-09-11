@@ -116,6 +116,6 @@ func main() {
 
 	http.Handle("/", http.FileServer(http.Dir(".")))
 
-	log.Println("Server started on :8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Println("Server started on :8070")
+	log.Fatal(http.ListenAndServe(":8070", nil))
 }
