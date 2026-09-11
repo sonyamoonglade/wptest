@@ -94,11 +94,9 @@ func main() {
 
 		// Send Notification
 		resp, err := webpush.SendNotification([]byte(jsonStr), &req.Subscription, &webpush.Options{
-			AuthScheme:      req.AuthScheme,
-			Subscriber:      "example@example.com", // Do not include "mailto:"
 			VAPIDPublicKey:  vapidPublicKey,
 			VAPIDPrivateKey: vapidPrivateKey,
-			TTL:             60,
+			TTL:             2400,
 		})
 		if err != nil {
 			log.Printf("Error sending notification: %v", err)
