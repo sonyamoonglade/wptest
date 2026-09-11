@@ -89,8 +89,8 @@ func main() {
 			return
 		}
 
-		const tmpl = `{"body": "Example", "title": "Hello from WebPush", "data": {"url": "%s"}}`
-		jsonStr := fmt.Sprintf(tmpl, os.Args[1])
+		const tmpl = `{"body": "Example", "title": "Hello from WebPush (%s)", "data": {"url": "%s"}}`
+		jsonStr := fmt.Sprintf(tmpl, os.Args[1], os.Args[1])
 
 		// Send Notification
 		resp, err := webpush.SendNotification([]byte(jsonStr), &req.Subscription, &webpush.Options{
